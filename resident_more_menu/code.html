@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Society Pro - More</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed-dim": "#ccc5c5",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-surface-variant": "#444748",
+                        "on-tertiary-fixed": "#1e1b1b",
+                        "surface": "#fbf9f9",
+                        "inverse-on-surface": "#f2f0f0",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dbdad9",
+                        "surface-variant": "#e3e2e2",
+                        "primary-container": "#424242",
+                        "tertiary": "#2f2b2b",
+                        "on-secondary-container": "#656464",
+                        "primary-fixed": "#e4e2e1",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "secondary": "#5f5e5e",
+                        "inverse-surface": "#303031",
+                        "surface-container-highest": "#e3e2e2",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-background": "#1b1c1c",
+                        "background": "#fbf9f9",
+                        "outline-variant": "#c4c7c7",
+                        "on-surface": "#1b1c1c",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#4a4646",
+                        "on-secondary-fixed-variant": "#474646",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#efeded",
+                        "on-primary-fixed-variant": "#474747",
+                        "inverse-primary": "#c8c6c6",
+                        "on-tertiary-container": "#b3adad",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#fbf9f9",
+                        "secondary-container": "#e5e2e1",
+                        "surface-container-high": "#e9e8e7",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#b0aeae",
+                        "on-error-container": "#93000a",
+                        "primary": "#2c2c2c",
+                        "tertiary-container": "#454141",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#e8e1e0",
+                        "surface-tint": "#5f5e5e",
+                        "primary-fixed-dim": "#c8c6c6",
+                        "surface-container-low": "#f5f3f3",
+                        "on-primary-fixed": "#1b1c1c",
+                        "outline": "#747878"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "md": "24px",
+                        "margin-desktop": "64px",
+                        "xl": "80px",
+                        "sm": "12px",
+                        "gutter": "24px",
+                        "lg": "48px",
+                        "margin-mobile": "16px",
+                        "xs": "4px",
+                        "base": "8px"
+                    },
+                    fontFamily: {
+                        "headline-sm": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "label-md": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "body-lg": ["Manrope"]
+                    },
+                    fontSize: {
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #fbf9f9;
+        }
+        
+        .neo-shadow {
+            box-shadow: -6px -6px 12px #FFFFFF, 6px 6px 12px #BEBEBE;
+        }
+        
+        .neo-shadow-inset {
+            box-shadow: inset -6px -6px 12px #FFFFFF, inset 6px 6px 12px #BEBEBE;
+        }
+
+        .neo-shadow-sm {
+            box-shadow: -4px -4px 8px #FFFFFF, 4px 4px 8px #BEBEBE;
+        }
+        
+        .neo-shadow-inset-sm {
+            box-shadow: inset -4px -4px 8px #FFFFFF, inset 4px 4px 8px #BEBEBE;
+        }
+
+        .neo-shadow-bottom-nav {
+            box-shadow: -2px -4px 8px #BEBEBE;
+        }
+        
+        /* Hide scrollbar for cleaner UI */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24 md:pb-0 flex flex-col md:flex-row">
+<!-- Top App Bar (Mobile) -->
+<header class="md:hidden w-full top-0 sticky shadow-[-6px_-6px_12px_#FFFFFF,6px_6px_12px_#BEBEBE] bg-background z-40">
+<div class="flex justify-between items-center px-margin-mobile py-sm w-full">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full neo-shadow-sm overflow-hidden border-2 border-surface">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A close-up, soft-focus portrait of a young professional in a light, serene setting. The lighting is high-key and neomorphic, matching the overall calm, clay-like aesthetic of the UI. The person appears approachable and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDknNEnC8TRZZSsYElqKllAAtaZ-HMNAWcvz9sXJnnpNRgDaWtFfFECIDBNxI2HouvzOuo-kt8MGbwvjYHn_k_uh9WMNEyQhtbdWGyQfJW9zQSwfrjiuoZheCSVotw662Nq6QOKbH5DgT6OOoADBtxUPsG_aWGGGhGuha_pPtG2EDvhbKKwmOrjmt9zOLUxVVO7Qddiw2cSepbThkojDSJfdaQgg92NLrgOfOs_bgm1We-n4nOeSTfM0WFHWIaS1XAOkwZq5nbFKKLo"/>
+</div>
+</div>
+<h1 class="font-display text-headline-md-mobile font-extrabold text-primary">SOCIETY PRO</h1>
+<button class="w-10 h-10 rounded-full flex items-center justify-center neo-shadow text-secondary hover:scale-105 transition-transform active:shadow-[inset_-6px_-6px_12px_#FFFFFF,inset_6px_6px_12px_#BEBEBE] transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- Side Navigation (Desktop) -->
+<nav class="hidden md:flex flex-col h-screen w-72 rounded-r-xl shadow-[6px_0_12px_#BEBEBE] bg-background fixed z-40 py-lg">
+<div class="px-md mb-8">
+<h1 class="font-display text-headline-md text-primary font-extrabold">SOCIETY PRO</h1>
+</div>
+<!-- Profile Header in Nav -->
+<div class="px-md mb-8 flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full neo-shadow overflow-hidden border-2 border-surface">
+<img alt="Admin Avatar" class="w-full h-full object-cover" data-alt="A close-up, soft-focus portrait of a young professional in a light, serene setting. The lighting is high-key and neomorphic, matching the overall calm, clay-like aesthetic of the UI. The person appears approachable and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXvPruyK2PpkgBlj4JOBvWw1UwgryLC2DcgHALpt_dar7VrykbtmXSsn44iYHl5p7ipmkVzxHjVD2ZZfcvoclI1UxFnGMeRdoxUBSwES7AIPQhI5Vep97OixbPD46A7AJ4FmX1CUWwQjhuOhtcQKvJT3hIE-geLUjdP0z4-6-fBzmmpv5gTv9flTT90Xtnxb5sHZQArpJvuI6huYuJnrLMsIWy7SiHjbr1GMDsbl2OF_jZ3mhKJ90ha9aSgscM-XiRIQAj-efxCqMg"/>
+</div>
+<div>
+<h2 class="font-label-md text-label-md text-on-surface">Society Admin</h2>
+<p class="font-label-sm text-label-sm text-secondary">Tower A - 402</p>
+</div>
+</div>
+<span class="inline-block mt-2 px-3 py-1 bg-secondary-container text-secondary font-label-sm text-label-sm rounded-full w-fit neo-shadow-inset-sm">Super User</span>
+</div>
+<div class="flex flex-col gap-2 flex-grow overflow-y-auto px-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary mx-2 my-1 hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] active:shadow-inner transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-body-md text-body-md">Tenants</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary mx-2 my-1 hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] active:shadow-inner transition-all" href="#">
+<span class="material-symbols-outlined">person_add</span>
+<span class="font-body-md text-body-md">Onboarding</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary mx-2 my-1 hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] active:shadow-inner transition-all" href="#">
+<span class="material-symbols-outlined">announcement</span>
+<span class="font-body-md text-body-md">Broadcast</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary mx-2 my-1 hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] active:shadow-inner transition-all" href="#">
+<span class="material-symbols-outlined">event_seat</span>
+<span class="font-body-md text-body-md">Bookings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-secondary-container text-primary shadow-[inset_-4px_-4px_8px_#FFFFFF,inset_4px_4px_8px_#BEBEBE] rounded-lg mx-2 my-1 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">celebration</span>
+<span class="font-body-md text-body-md font-bold">Functions</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary mx-2 my-1 hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] active:shadow-inner transition-all" href="#">
+<span class="material-symbols-outlined">emergency</span>
+<span class="font-body-md text-body-md">Emergency</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary mx-2 my-1 hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] active:shadow-inner transition-all" href="#">
+<span class="material-symbols-outlined">domain</span>
+<span class="font-body-md text-body-md">Allocation</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary mx-2 my-1 hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] active:shadow-inner transition-all" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-body-md text-body-md">Revenue</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary mx-2 my-1 hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] active:shadow-inner transition-all" href="#">
+<span class="material-symbols-outlined">local_parking</span>
+<span class="font-body-md text-body-md">Fines</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary mx-2 my-1 hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] active:shadow-inner transition-all" href="#">
+<span class="material-symbols-outlined">how_to_vote</span>
+<span class="font-body-md text-body-md">Voting</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary mx-2 my-1 hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] active:shadow-inner transition-all" href="#">
+<span class="material-symbols-outlined">admin_panel_settings</span>
+<span class="font-body-md text-body-md">Management</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-72 p-margin-mobile md:p-margin-desktop max-w-5xl mx-auto w-full">
+<header class="mb-8">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">More Options</h2>
+<p class="font-body-md text-body-md text-secondary mt-2">Manage your account and society preferences.</p>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Profile Bento Box (Spans full width on mobile, 8 cols on desktop) -->
+<div class="md:col-span-8 bg-surface rounded-xl p-md neo-shadow flex flex-col justify-between">
+<div class="flex items-start justify-between mb-6">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-full neo-shadow-sm overflow-hidden border-4 border-surface">
+<img alt="User Avatar Large" class="w-full h-full object-cover" data-alt="A high-quality, bright portrait of a person suitable for a professional profile avatar. The lighting is soft and neomorphic, matching a light grey aesthetic. The mood is welcoming and calm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzKY7w26ABn_DPiROK1hI1JAaU5NpA-yRagD3-W65S01nUER-RLzp3FOVlHF_5dsis4Eg99KDKKLLBSNhjY5Xvjv2En9o0zJesa4CoYzK15RC90JT-Tg0TxwaqCko_7_aZNMMfpX0vPZLvcERgBAmDlmDUIUaxvpEgQeW7tU3M3Q8sndhP8X6q0QNRX_hvQ0ux_SVcSnr8q6woVhOxkpmrnNm5ToE3QR-9DvYOavSSxbFxscdrQm9iSlO5ewMvlKa2WFQB62TcS3br"/>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Alex Mercer</h3>
+<p class="font-label-md text-label-md text-secondary">Unit A-402 • Owner</p>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-surface neo-shadow hover:neo-shadow-inset transition-all text-primary">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-auto">
+<div class="bg-surface rounded-lg p-3 neo-shadow-inset-sm flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-1">Family Members</span>
+<span class="font-headline-sm text-headline-sm text-primary">4</span>
+</div>
+<div class="bg-surface rounded-lg p-3 neo-shadow-inset-sm flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-1">Vehicles</span>
+<span class="font-headline-sm text-headline-sm text-primary">2</span>
+</div>
+</div>
+</div>
+<!-- Switch View Bento Box (Spans full width on mobile, 4 cols on desktop) -->
+<div class="md:col-span-4 bg-primary-container text-on-primary rounded-xl p-md neo-shadow flex flex-col items-center justify-center text-center">
+<div class="w-16 h-16 rounded-full bg-surface/20 flex items-center justify-center mb-4 neo-shadow-inset-sm">
+<span class="material-symbols-outlined text-on-primary text-3xl">admin_panel_settings</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-primary mb-2">Committee View</h3>
+<p class="font-body-md text-body-md text-on-primary-container mb-6">Switch to manage society administrative tasks.</p>
+<button class="px-6 py-2 rounded-full bg-surface text-primary font-label-md text-label-md neo-shadow-sm hover:scale-105 active:scale-95 transition-all">
+                    Switch View
+                </button>
+</div>
+<!-- Action Grid (Documents, Directory, Settings) -->
+<div class="md:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-gutter mt-4">
+<!-- Resident Directory -->
+<button class="bg-surface rounded-xl p-md neo-shadow hover:neo-shadow-inset transition-all flex flex-col items-start text-left group">
+<div class="w-12 h-12 rounded-lg bg-surface neo-shadow-sm flex items-center justify-center mb-4 group-hover:text-primary text-secondary transition-colors">
+<span class="material-symbols-outlined text-2xl">contact_page</span>
+</div>
+<h4 class="font-label-md text-label-md text-primary mb-1">Resident Directory</h4>
+<p class="font-label-sm text-label-sm text-secondary">Browse contact info for neighbors and committee members.</p>
+</button>
+<!-- Documents & Forms -->
+<button class="bg-surface rounded-xl p-md neo-shadow hover:neo-shadow-inset transition-all flex flex-col items-start text-left group">
+<div class="w-12 h-12 rounded-lg bg-surface neo-shadow-sm flex items-center justify-center mb-4 group-hover:text-primary text-secondary transition-colors">
+<span class="material-symbols-outlined text-2xl">description</span>
+</div>
+<h4 class="font-label-md text-label-md text-primary mb-1">Documents &amp; Forms</h4>
+<p class="font-label-sm text-label-sm text-secondary">Access society bylaws, NOC forms, and meeting minutes.</p>
+</button>
+<!-- Settings -->
+<button class="bg-surface rounded-xl p-md neo-shadow hover:neo-shadow-inset transition-all flex flex-col items-start text-left group">
+<div class="w-12 h-12 rounded-lg bg-surface neo-shadow-sm flex items-center justify-center mb-4 group-hover:text-primary text-secondary transition-colors">
+<span class="material-symbols-outlined text-2xl">settings</span>
+</div>
+<h4 class="font-label-md text-label-md text-primary mb-1">App Settings</h4>
+<p class="font-label-sm text-label-sm text-secondary">Manage notifications, privacy, and account security.</p>
+</button>
+</div>
+<!-- Logout Section -->
+<div class="md:col-span-12 flex justify-center mt-8">
+<button class="flex items-center gap-2 px-6 py-3 rounded-full bg-surface text-error font-label-md text-label-md neo-shadow hover:neo-shadow-inset transition-all">
+<span class="material-symbols-outlined">logout</span>
+                    Sign Out
+                </button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl shadow-[-2px_-4px_8px_#BEBEBE] bg-background">
+<div class="flex justify-around items-center w-full px-2 py-3">
+<a class="flex flex-col items-center justify-center text-secondary p-2 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary p-2 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-sm text-label-sm mt-1">Finances</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary p-2 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-label-sm text-label-sm mt-1">Notices</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary p-2 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-label-sm text-label-sm mt-1">Complaints</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold shadow-[inset_-4px_-4px_8px_#FFFFFF,inset_4px_4px_8px_#BEBEBE] rounded-lg p-2 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu</span>
+<span class="font-label-sm text-label-sm mt-1">More</span>
+</a>
+</div>
+</nav>
+</body></html>

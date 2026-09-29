@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Complaints &amp; Helpdesk - SOCIETY PRO</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#ccc5c5",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-surface-variant": "#444748",
+                        "on-tertiary-fixed": "#1e1b1b",
+                        "surface": "#fbf9f9",
+                        "inverse-on-surface": "#f2f0f0",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dbdad9",
+                        "surface-variant": "#e3e2e2",
+                        "primary-container": "#424242",
+                        "tertiary": "#2f2b2b",
+                        "on-secondary-container": "#656464",
+                        "primary-fixed": "#e4e2e1",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "secondary": "#5f5e5e",
+                        "inverse-surface": "#303031",
+                        "surface-container-highest": "#e3e2e2",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-background": "#1b1c1c",
+                        "background": "#fbf9f9",
+                        "outline-variant": "#c4c7c7",
+                        "on-surface": "#1b1c1c",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#4a4646",
+                        "on-secondary-fixed-variant": "#474646",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#efeded",
+                        "on-primary-fixed-variant": "#474747",
+                        "inverse-primary": "#c8c6c6",
+                        "on-tertiary-container": "#b3adad",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#fbf9f9",
+                        "secondary-container": "#e5e2e1",
+                        "surface-container-high": "#e9e8e7",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#b0aeae",
+                        "on-error-container": "#93000a",
+                        "primary": "#2c2c2c",
+                        "tertiary-container": "#454141",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#e8e1e0",
+                        "surface-tint": "#5f5e5e",
+                        "primary-fixed-dim": "#c8c6c6",
+                        "surface-container-low": "#f5f3f3",
+                        "on-primary-fixed": "#1b1c1c",
+                        "outline": "#747878"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "margin-desktop": "64px",
+                        "xl": "80px",
+                        "sm": "12px",
+                        "gutter": "24px",
+                        "lg": "48px",
+                        "margin-mobile": "16px",
+                        "xs": "4px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "label-md": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "body-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Neumorphic Utilities */
+        .neo-extrude {
+            box-shadow: -6px -6px 12px #ffffff, 6px 6px 12px #bebebe;
+        }
+        .neo-extrude-sm {
+            box-shadow: -4px -4px 8px #ffffff, 4px 4px 8px #bebebe;
+        }
+        .neo-inset {
+            box-shadow: inset -6px -6px 12px #ffffff, inset 6px 6px 12px #bebebe;
+        }
+        .neo-inset-sm {
+            box-shadow: inset -4px -4px 8px #ffffff, inset 4px 4px 8px #bebebe;
+        }
+        
+        .neo-button-hover:hover {
+            box-shadow: -8px -8px 16px #ffffff, 8px 8px 16px #bebebe;
+            transform: translateY(-1px);
+        }
+        .neo-button-active:active {
+            box-shadow: inset -4px -4px 8px #ffffff, inset 4px 4px 8px #bebebe;
+            transform: translateY(1px);
+        }
+        
+        body {
+            background-color: #fbf9f9; /* background */
+            color: #1b1c1c; /* on-background */
+        }
+        
+        /* Hide scrollbar for clean UI */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-surface w-full top-0 sticky z-40 transition-all flex justify-between items-center px-margin-mobile md:px-margin-desktop py-sm no-border shadow-[-6px_-6px_12px_#FFFFFF,6px_6px_12px_#BEBEBE] dark:shadow-none">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full neo-extrude overflow-hidden border-2 border-transparent">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A clean, modern avatar illustration of a user in a minimalist light-mode setting. Soft, diffuse lighting highlights a simple, approachable profile character against a pure white background. The aesthetic is smooth, neomorphic, and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqUKOGIUZcpbj66DpvpgEwUAYRQb5qKmI9JFBr8PF423neze5L9KKWeVDeHGyncxbZqYNEz1dUPZW1HVilmNsBBpGkDlsaxmjIGQkBJBS-aNzn2YwaX5rfgI9IChBfyjnL7WZIWJ9ZOLXhyZ0qt8iEyaaKXwm4m4kAA9ukTFFuPi0AI48IHpPh8_S-WqzU9MHqOUmrb69P80CXiP9RjtBvuF3XHJdsGvR5cS_AA4-b6gDXTlCpkfzcnDU8X6gR8H5x8_ebORXwe547"/>
+</div>
+<h1 class="font-display font-headline-md text-headline-md-mobile md:text-headline-md font-extrabold text-primary dark:text-on-surface">SOCIETY PRO</h1>
+</div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-primary dark:text-on-surface neo-extrude hover:scale-105 transition-transform active:shadow-[inset_-6px_-6px_12px_#FFFFFF,inset_6px_6px_12px_#BEBEBE]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+</header>
+<main class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop pt-md pb-xl">
+<!-- Page Title -->
+<div class="mb-lg flex justify-between items-end mt-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Complaints</h2>
+<p class="font-body-lg text-body-lg text-secondary mt-2">Manage &amp; track your society requests.</p>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Primary Action & Emergency (Left Col on Desktop) -->
+<div class="md:col-span-4 flex flex-col gap-lg">
+<!-- Raise Complaint Card -->
+<div class="bg-background rounded-xl p-md neo-extrude flex flex-col justify-center items-center text-center">
+<div class="w-16 h-16 rounded-full neo-inset flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">New Request</h3>
+<p class="font-body-md text-body-md text-secondary mb-6">Found an issue? Let us know and we'll fix it.</p>
+<button class="w-full py-3 px-6 rounded-lg bg-background text-primary font-label-md text-label-md neo-extrude neo-button-hover neo-button-active transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">edit_document</span>
+                        Raise Complaint
+                    </button>
+</div>
+<!-- Emergency Contacts -->
+<div class="bg-background rounded-xl p-md neo-extrude">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-error">emergency</span>
+                        Quick Dial
+                    </h3>
+<div class="flex flex-col gap-4">
+<!-- Contact 1 -->
+<div class="flex items-center justify-between p-3 rounded-lg neo-inset-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full neo-extrude flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">security</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary">Main Gate</p>
+<p class="font-label-sm text-label-sm text-secondary">Security</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full neo-extrude flex items-center justify-center text-primary hover:scale-105 active:neo-inset-sm transition-all">
+<span class="material-symbols-outlined text-sm">call</span>
+</button>
+</div>
+<!-- Contact 2 -->
+<div class="flex items-center justify-between p-3 rounded-lg neo-inset-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full neo-extrude flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">plumbing</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary">Facility Mgr</p>
+<p class="font-label-sm text-label-sm text-secondary">Maintenance</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full neo-extrude flex items-center justify-center text-primary hover:scale-105 active:neo-inset-sm transition-all">
+<span class="material-symbols-outlined text-sm">call</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Active Complaints & History (Right Col on Desktop) -->
+<div class="md:col-span-8 flex flex-col gap-lg">
+<!-- Track Active Complaints -->
+<div class="bg-background rounded-xl p-md neo-extrude">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-sm text-headline-sm text-primary">Active Issues</h3>
+<span class="font-label-sm text-label-sm text-secondary px-3 py-1 rounded-full neo-inset-sm">2 Open</span>
+</div>
+<div class="flex flex-col gap-6">
+<!-- Complaint Item 1 (In Progress) -->
+<div class="p-4 rounded-xl neo-inset-sm bg-surface-container-low">
+<div class="flex justify-between items-start mb-3">
+<div>
+<p class="font-label-sm text-label-sm text-secondary mb-1">#CMP-8821 • Plumbing</p>
+<h4 class="font-label-md text-label-md text-primary">Water leakage in Master Bath</h4>
+</div>
+<div class="px-3 py-1 rounded-full bg-background neo-extrude-sm flex items-center gap-1">
+<div class="w-2 h-2 rounded-full bg-outline"></div>
+<span class="font-label-sm text-label-sm text-primary">In Progress</span>
+</div>
+</div>
+<!-- Status Bar -->
+<div class="w-full h-2 bg-background rounded-full neo-inset mt-4 overflow-hidden flex">
+<div class="h-full bg-primary w-1/2 rounded-full shadow-[2px_0_5px_rgba(0,0,0,0.2)]"></div>
+</div>
+<div class="flex justify-between mt-2 font-label-sm text-label-sm text-secondary">
+<span>Logged: Today, 9:00 AM</span>
+<span>Est. Fix: 2:00 PM</span>
+</div>
+</div>
+<!-- Complaint Item 2 (Pending) -->
+<div class="p-4 rounded-xl neo-inset-sm bg-surface-container-low">
+<div class="flex justify-between items-start mb-3">
+<div>
+<p class="font-label-sm text-label-sm text-secondary mb-1">#CMP-8825 • Electrical</p>
+<h4 class="font-label-md text-label-md text-primary">Hallway light flickering</h4>
+</div>
+<div class="px-3 py-1 rounded-full bg-background neo-extrude-sm flex items-center gap-1">
+<div class="w-2 h-2 rounded-full bg-surface-tint"></div>
+<span class="font-label-sm text-label-sm text-primary">Pending</span>
+</div>
+</div>
+<!-- Status Bar -->
+<div class="w-full h-2 bg-background rounded-full neo-inset mt-4 overflow-hidden flex">
+<div class="h-full bg-outline-variant w-1/4 rounded-full"></div>
+</div>
+<div class="flex justify-between mt-2 font-label-sm text-label-sm text-secondary">
+<span>Logged: Just now</span>
+<span>Awaiting Assignment</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Resolved & Feedback -->
+<div class="bg-background rounded-xl p-md neo-extrude">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-6">Recently Resolved</h3>
+<div class="flex flex-col gap-4">
+<!-- Resolved Item -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center p-4 rounded-xl neo-inset-sm gap-4">
+<div>
+<p class="font-label-sm text-label-sm text-secondary mb-1">#CMP-8790 • Cleaning</p>
+<h4 class="font-label-md text-label-md text-primary">Corridor needs sweeping</h4>
+<p class="font-label-sm text-label-sm text-secondary mt-1">Resolved 2 days ago</p>
+</div>
+<!-- Rating Action -->
+<div class="flex items-center gap-3 w-full md:w-auto">
+<p class="font-label-sm text-label-sm text-primary whitespace-nowrap">Rate Service:</p>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full neo-extrude flex items-center justify-center text-secondary hover:text-primary hover:scale-110 active:neo-inset-sm transition-all">
+<span class="material-symbols-outlined">thumb_down</span>
+</button>
+<button class="w-10 h-10 rounded-full neo-extrude flex items-center justify-center text-secondary hover:text-primary hover:scale-110 active:neo-inset-sm transition-all">
+<span class="material-symbols-outlined">thumb_up</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-background dark:bg-surface fixed bottom-0 w-full z-50 rounded-t-xl shadow-[-2px_-4px_8px_#BEBEBE] flex justify-around items-center px-2 py-3">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-secondary p-2 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</a>
+<!-- Finances -->
+<a class="flex flex-col items-center justify-center text-secondary p-2 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-sm text-label-sm mt-1">Finances</span>
+</a>
+<!-- Notices -->
+<a class="flex flex-col items-center justify-center text-secondary p-2 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-label-sm text-label-sm mt-1">Notices</span>
+</a>
+<!-- Complaints (ACTIVE) -->
+<a class="flex flex-col items-center justify-center text-primary font-bold shadow-[inset_-4px_-4px_8px_#FFFFFF,inset_4px_4px_8px_#BEBEBE] rounded-lg p-2 active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">forum</span>
+<span class="font-label-sm text-label-sm mt-1">Complaints</span>
+</a>
+<!-- More -->
+<a class="flex flex-col items-center justify-center text-secondary p-2 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">menu</span>
+<span class="font-label-sm text-label-sm mt-1">More</span>
+</a>
+</nav>
+</body></html>

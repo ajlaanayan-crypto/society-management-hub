@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Resident Dashboard - Society Pro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#e4e2e1",
+                        "surface-dim": "#dbdad9",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#1e1b1b",
+                        "on-surface-variant": "#444748",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "tertiary-fixed-dim": "#ccc5c5",
+                        "surface-variant": "#e3e2e2",
+                        "on-secondary-fixed-variant": "#474646",
+                        "surface-container-high": "#e9e8e7",
+                        "outline": "#747878",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e3e2e2",
+                        "primary": "#2c2c2c",
+                        "surface": "#fbf9f9",
+                        "tertiary-container": "#454141",
+                        "surface-container": "#efeded",
+                        "primary-container": "#424242",
+                        "outline-variant": "#c4c7c7",
+                        "inverse-on-surface": "#f2f0f0",
+                        "primary-fixed-dim": "#c8c6c6",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-surface": "#1b1c1c",
+                        "on-background": "#1b1c1c",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#e8e1e0",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-tertiary-container": "#b3adad",
+                        "on-secondary-container": "#656464",
+                        "background": "#fbf9f9",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f5f3f3",
+                        "surface-tint": "#5f5e5e",
+                        "on-tertiary-fixed-variant": "#4a4646",
+                        "tertiary": "#2f2b2b",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#5f5e5e",
+                        "on-primary-container": "#b0aeae",
+                        "on-primary-fixed-variant": "#474747",
+                        "on-primary-fixed": "#1b1c1c",
+                        "inverse-surface": "#303031",
+                        "secondary-container": "#e5e2e1",
+                        "inverse-primary": "#c8c6c6",
+                        "surface-bright": "#fbf9f9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "xs": "4px",
+                        "xl": "80px",
+                        "margin-mobile": "16px",
+                        "lg": "48px",
+                        "sm": "12px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "label-md": ["Manrope"],
+                        "headline-sm": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "body-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .neo-extrude {
+            background-color: #e0e0e0;
+            box-shadow: -6px -6px 12px #ffffff, 6px 6px 12px #bebebe;
+        }
+        .neo-inset {
+            background-color: #e0e0e0;
+            box-shadow: inset -6px -6px 12px #ffffff, inset 6px 6px 12px #bebebe;
+        }
+        .neo-extrude-sm {
+            background-color: #e0e0e0;
+            box-shadow: -4px -4px 8px #ffffff, 4px 4px 8px #bebebe;
+        }
+        .neo-inset-sm {
+            background-color: #e0e0e0;
+            box-shadow: inset -4px -4px 8px #ffffff, inset 4px 4px 8px #bebebe;
+        }
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            background-color: #e0e0e0; /* Override tailwind background for consistent neomorphism base */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface font-body-md pb-[90px] md:pb-0 md:flex">
+<!-- Desktop Sidebar (Hidden on Mobile) -->
+<aside class="hidden md:flex bg-background dark:bg-surface text-primary dark:text-on-surface font-body-md h-screen w-72 rounded-r-xl shadow-[6px_0_12px_#BEBEBE] shadow-[-6px_-6px_12px_#FFFFFF,6px_6px_12px_#BEBEBE] flex-col py-lg sticky top-0 shrink-0 overflow-y-auto hide-scroll z-40" style="background-color: #e0e0e0;">
+<div class="px-md mb-md">
+<h2 class="font-display text-headline-md text-primary font-extrabold tracking-tight">SOCIETY PRO</h2>
+</div>
+<div class="flex items-center px-md mb-lg">
+<div class="w-12 h-12 rounded-full neo-extrude-sm mr-sm overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A close up portrait of an elegant professional person in a brightly lit modern office environment, maintaining the soft neomorphic light grey aesthetic with gentle lighting and shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzzjbmrdwyKYUqEF50uL6T1OUcD5z6Ai0eoBQc1P73NzyvSlBV7_hrnAQs8RxN4Ox523O9fAfWSVuajm_HvfmCfP7YKvpVW76PjmYhIFsOUv1b_SPDMlXtRr2DUjkNtLSiHQYvMESc_Hv6JglkQGGbLF6WFj2g-PSXmZJKJvem20Mo54b120PGaYtP_V9RAheQuS2ludbHa7mHtQdxZG6pocFzj-ucdyoOx_fSKYAYhVsqnfKY4GCV0etYSzlkDiooh8KuaqAqpLjs"/>
+</div>
+<div>
+<p class="font-label-md text-primary">Society Admin</p>
+<p class="font-label-sm text-secondary">Tower A - 402</p>
+<p class="font-label-sm text-tertiary mt-xs">Super User</p>
+</div>
+</div>
+<nav class="flex-1 px-sm">
+<!-- Navigation Items -->
+<a class="flex items-center px-sm py-sm rounded-lg mx-2 my-1 text-secondary hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] active:shadow-inner transition-all" href="#">
+<span class="material-symbols-outlined mr-sm" data-weight="regular">group</span>
+<span class="font-label-md">Tenants</span>
+</a>
+<a class="flex items-center px-sm py-sm rounded-lg mx-2 my-1 text-secondary hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] active:shadow-inner transition-all" href="#">
+<span class="material-symbols-outlined mr-sm" data-weight="regular">person_add</span>
+<span class="font-label-md">Onboarding</span>
+</a>
+<a class="flex items-center px-sm py-sm rounded-lg mx-2 my-1 text-secondary hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] active:shadow-inner transition-all" href="#">
+<span class="material-symbols-outlined mr-sm" data-weight="regular">announcement</span>
+<span class="font-label-md">Broadcast</span>
+</a>
+<a class="flex items-center px-sm py-sm rounded-lg mx-2 my-1 text-secondary hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] active:shadow-inner transition-all" href="#">
+<span class="material-symbols-outlined mr-sm" data-weight="regular">event_seat</span>
+<span class="font-label-md">Bookings</span>
+</a>
+<a class="flex items-center px-sm py-sm rounded-lg mx-2 my-1 text-secondary hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] active:shadow-inner transition-all" href="#">
+<span class="material-symbols-outlined mr-sm" data-weight="regular">celebration</span>
+<span class="font-label-md">Functions</span>
+</a>
+<a class="flex items-center px-sm py-sm rounded-lg mx-2 my-1 text-secondary hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] active:shadow-inner transition-all" href="#">
+<span class="material-symbols-outlined mr-sm" data-weight="regular">emergency</span>
+<span class="font-label-md">Emergency</span>
+</a>
+<a class="flex items-center px-sm py-sm rounded-lg mx-2 my-1 text-secondary hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] active:shadow-inner transition-all" href="#">
+<span class="material-symbols-outlined mr-sm" data-weight="regular">domain</span>
+<span class="font-label-md">Allocation</span>
+</a>
+<a class="flex items-center px-sm py-sm rounded-lg mx-2 my-1 text-secondary hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] active:shadow-inner transition-all" href="#">
+<span class="material-symbols-outlined mr-sm" data-weight="regular">receipt_long</span>
+<span class="font-label-md">Revenue</span>
+</a>
+<a class="flex items-center px-sm py-sm rounded-lg mx-2 my-1 text-secondary hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] active:shadow-inner transition-all" href="#">
+<span class="material-symbols-outlined mr-sm" data-weight="regular">local_parking</span>
+<span class="font-label-md">Fines</span>
+</a>
+<a class="flex items-center px-sm py-sm rounded-lg mx-2 my-1 text-secondary hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] active:shadow-inner transition-all" href="#">
+<span class="material-symbols-outlined mr-sm" data-weight="regular">how_to_vote</span>
+<span class="font-label-md">Voting</span>
+</a>
+<a class="flex items-center px-sm py-sm rounded-lg mx-2 my-1 text-secondary hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] active:shadow-inner transition-all" href="#">
+<span class="material-symbols-outlined mr-sm" data-weight="regular">admin_panel_settings</span>
+<span class="font-label-md">Management</span>
+</a>
+</nav>
+</aside>
+<main class="flex-1 md:ml-0 min-h-screen">
+<!-- Header -->
+<header class="bg-background dark:bg-surface text-primary dark:text-on-surface font-headline-md text-headline-md-mobile w-full top-0 sticky no-border shadow-[-6px_-6px_12px_#FFFFFF,6px_6px_12px_#BEBEBE] dark:shadow-none z-30" style="background-color: #e0e0e0;">
+<div class="flex justify-between items-center px-margin-mobile py-sm w-full md:px-margin-desktop">
+<div class="flex items-center cursor-pointer hover:scale-105 transition-transform active:shadow-[inset_-6px_-6px_12px_#FFFFFF,inset_6px_6px_12px_#BEBEBE] transition-all p-2 rounded-xl">
+<div class="w-10 h-10 rounded-full neo-extrude-sm overflow-hidden mr-sm">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a friendly smiling person in a brightly lit modern office environment, maintaining the soft neomorphic light grey aesthetic with gentle lighting and shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcAMy7wzwTKNCOGLU-MzyyBePI0WS48fnjvFnW6FuNIygIzKMXHI1P8n_2dBMyfu9NSnyol0aHXI2Mjw95FcoZe9SjlaEAqxk7Oy19SweUKLrAGJB8R3Q96sxG2o4Jv7wQj6KV6xdxvI65JDlApMT2myk6_a4P5izAy0MVpR1t0-bXbn5ikrNvGRoxsqXScL-T5ncGfcEzUnThpkA94ly4COMjvG7s317LsO0RHYenbPjOG_d79-GY01ZHbUaUvMD1ZZklHuZIA9_N"/>
+</div>
+<span class="font-display text-headline-md-mobile font-extrabold text-primary dark:text-on-surface tracking-tight hidden md:block">SOCIETY PRO</span>
+<span class="font-display text-headline-md-mobile font-extrabold text-primary dark:text-on-surface tracking-tight md:hidden">SOCIETY PRO</span>
+</div>
+<button class="w-10 h-10 rounded-full neo-extrude flex items-center justify-center text-primary hover:scale-105 transition-transform active:shadow-[inset_-6px_-6px_12px_#FFFFFF,inset_6px_6px_12px_#BEBEBE] transition-all">
+<span class="material-symbols-outlined" data-weight="regular">notifications</span>
+</button>
+</div>
+</header>
+<div class="px-margin-mobile md:px-margin-desktop py-md max-w-7xl mx-auto space-y-lg">
+<!-- Quick Actions Bento Grid -->
+<section>
+<h3 class="font-headline-sm text-primary mb-md ml-sm">Quick Actions</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md">
+<button class="neo-extrude rounded-xl p-md flex flex-col items-center justify-center gap-sm active:neo-inset transition-all hover:-translate-y-1">
+<div class="w-12 h-12 rounded-full neo-inset-sm flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl" data-weight="regular">sensor_door</span>
+</div>
+<span class="font-label-md text-primary">Gate Pass</span>
+</button>
+<button class="neo-extrude rounded-xl p-md flex flex-col items-center justify-center gap-sm active:neo-inset transition-all hover:-translate-y-1">
+<div class="w-12 h-12 rounded-full neo-inset-sm flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl" data-weight="regular">sports_tennis</span>
+</div>
+<span class="font-label-md text-primary">Book Amenity</span>
+</button>
+<button class="neo-extrude rounded-xl p-md flex flex-col items-center justify-center gap-sm active:neo-inset transition-all hover:-translate-y-1">
+<div class="w-12 h-12 rounded-full neo-inset-sm flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl" data-weight="regular">report_problem</span>
+</div>
+<span class="font-label-md text-primary">Complaint</span>
+</button>
+<button class="neo-extrude rounded-xl p-md flex flex-col items-center justify-center gap-sm active:neo-inset transition-all hover:-translate-y-1 text-error">
+<div class="w-12 h-12 rounded-full neo-inset-sm flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-2xl" data-weight="fill">e911_emergency</span>
+</div>
+<span class="font-label-md">Emergency</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Navigation (Hidden on Desktop) -->
+<nav class="md:hidden bg-background dark:bg-surface text-primary dark:text-on-surface font-label-sm text-label-sm fixed bottom-0 w-full z-50 rounded-t-xl shadow-[-6px_-6px_12px_#FFFFFF,6px_6px_12px_#BEBEBE] shadow-[-2px_-4px_8px_#BEBEBE] flex justify-around items-center px-2 py-3" style="background-color: #e0e0e0;">
+<a class="flex flex-col items-center justify-center text-primary font-bold shadow-[inset_-4px_-4px_8px_#FFFFFF,inset_4px_4px_8px_#BEBEBE] rounded-lg p-2 active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-weight="fill">dashboard</span>
+<span>Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary p-2 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-weight="regular">payments</span>
+<span>Finances</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary p-2 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-weight="regular">campaign</span>
+<span>Notices</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary p-2 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-weight="regular">forum</span>
+<span>Complaints</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary p-2 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-weight="regular">menu</span>
+<span>More</span>
+</a>
+</nav>
+<script>
+        // Simple script to toggle expandable sections if added later
+        document.querySelectorAll('.expand-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const targetId = this.getAttribute('data-target');
+                const content = document.getElementById(targetId);
+                const icon = this.querySelector('.material-symbols-outlined');
+                
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    content.classList.add('hidden');
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+    </script>
+</body></html>

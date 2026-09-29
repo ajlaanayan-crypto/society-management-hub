@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Society Pro - Operations &amp; Bookings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;family=Jetbrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&amp;family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-error-container": "#93000a",
+                "surface": "#fbf9f9",
+                "surface-container-high": "#e9e8e7",
+                "on-secondary-fixed": "#1c1b1b",
+                "on-secondary-fixed-variant": "#474646",
+                "on-primary-fixed-variant": "#474747",
+                "secondary-fixed": "#e5e2e1",
+                "secondary": "#5f5e5e",
+                "on-tertiary-fixed": "#1e1b1b",
+                "secondary-container": "#e5e2e1",
+                "tertiary-fixed": "#e8e1e0",
+                "surface-dim": "#dbdad9",
+                "primary-fixed": "#e4e2e1",
+                "error-container": "#ffdad6",
+                "surface-container": "#efeded",
+                "on-error": "#ffffff",
+                "on-secondary": "#ffffff",
+                "error": "#ba1a1a",
+                "on-surface": "#1b1c1c",
+                "primary-container": "#424242",
+                "primary-fixed-dim": "#c8c6c6",
+                "surface-bright": "#fbf9f9",
+                "inverse-primary": "#c8c6c6",
+                "surface-tint": "#5f5e5e",
+                "surface-container-lowest": "#ffffff",
+                "tertiary-fixed-dim": "#ccc5c5",
+                "surface-variant": "#e3e2e2",
+                "on-primary": "#ffffff",
+                "tertiary": "#2f2b2b",
+                "on-primary-fixed": "#1b1c1c",
+                "secondary-fixed-dim": "#c8c6c5",
+                "outline": "#747878",
+                "surface-container-low": "#f5f3f3",
+                "on-primary-container": "#b0aeae",
+                "on-tertiary": "#ffffff",
+                "tertiary-container": "#454141",
+                "inverse-on-surface": "#f2f0f0",
+                "on-tertiary-fixed-variant": "#4a4646",
+                "on-secondary-container": "#656464",
+                "outline-variant": "#c4c7c7",
+                "on-background": "#1b1c1c",
+                "on-tertiary-container": "#b3adad",
+                "on-surface-variant": "#444748",
+                "background": "#fbf9f9",
+                "primary": "#2c2c2c",
+                "surface-container-highest": "#e3e2e2",
+                "inverse-surface": "#303031"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "base": "8px",
+                "margin-mobile": "16px",
+                "gutter": "24px",
+                "xl": "80px",
+                "sm": "12px",
+                "margin-desktop": "64px",
+                "md": "24px",
+                "xs": "4px",
+                "lg": "48px"
+        },
+        "fontFamily": {
+                "body-md": [
+                        "Manrope"
+                ],
+                "label-sm": [
+                        "Manrope"
+                ],
+                "headline-md": [
+                        "Manrope"
+                ],
+                "label-md": [
+                        "Manrope"
+                ],
+                "headline-lg": [
+                        "Manrope"
+                ],
+                "headline-lg-mobile": [
+                        "Manrope"
+                ],
+                "headline-sm": [
+                        "Manrope"
+                ],
+                "body-lg": [
+                        "Manrope"
+                ]
+        },
+        "fontSize": {
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-md": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "700"
+                        }
+                ],
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "headline-sm": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .extruded { box-shadow: -6px -6px 12px #FFFFFF, 6px 6px 12px #BEBEBE; }
+        .recessed { box-shadow: inset -6px -6px 12px #FFFFFF, inset 6px 6px 12px #BEBEBE; }
+        .extruded-hover:hover { box-shadow: -8px -8px 16px #FFFFFF, 8px 8px 16px #BEBEBE; }
+        .extruded-active:active { box-shadow: inset -6px -6px 12px #FFFFFF, inset 6px 6px 12px #BEBEBE; }
+        
+        /* Neomorphic Toggle */
+        .toggle-checkbox:checked { right: 0; border-color: #000; }
+        .toggle-checkbox:checked + .toggle-label { background-color: #000; }
+        .toggle-checkbox:checked + .toggle-label:after { transform: translateX(100%); border-color: white; }
+        .toggle-label { transition: all .3s ease; box-shadow: inset -4px -4px 8px #FFFFFF, inset 4px 4px 8px #BEBEBE; }
+        .toggle-label:after { transition: all .3s ease; box-shadow: -2px -2px 4px #FFFFFF, 2px 2px 4px #BEBEBE; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col items-center">
+<div class="w-full max-w-[1200px] flex-1 flex flex-col md:flex-row relative bg-background">
+<!-- TopAppBar (Mobile & Desktop Header) -->
+<header class="w-full top-0 sticky bg-background z-40 md:hidden flex justify-between items-center px-margin-mobile py-sm no-border shadow-[-6px_-6px_12px_#FFFFFF,6px_6px_12px_#BEBEBE]">
+<div class="flex items-center gap-sm">
+<img alt="User Profile" class="w-10 h-10 rounded-full extruded object-cover" data-alt="A small, circular avatar portrait of a professional property manager in a light grey business suit, smiling softly against a white background. Neomorphic lighting style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6nBKEbgmVh6tPn_jN0VkYJIfDE7e0MDfydRlnOhuw8lzkXR3rTtghR8Slfgr-VasDNVma2qhQQVW0S2O8FjebSfmvvz_v3YC5QW8PTleOAp0K1W3tBuPVzinz-TWGQHDycy1x-KGfae7C1mCiQbboSpN8GKkdh8g1Cip6VZC5M3OIfHHNnk1sGIc5mao2LAnd0l3eh4gDhQLDTmQAVAejf0kthCAYpd2MvzS5IbgA7I0iNTJowZx6odNEEUmwBEg1iyup8La46YsU"/>
+</div>
+<h1 class="font-display text-headline-md-mobile font-extrabold text-primary uppercase tracking-tight">SOCIETY PRO</h1>
+<button class="w-10 h-10 rounded-full flex items-center justify-center extruded extruded-active transition-all text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+</header>
+<!-- Desktop Navigation Drawer -->
+<aside class="hidden md:flex flex-col h-full w-72 rounded-r-xl bg-background shadow-[6px_0_12px_#BEBEBE] py-lg sticky top-0 h-screen">
+<div class="px-md mb-lg">
+<h2 class="font-display text-headline-md font-extrabold text-primary uppercase tracking-tight mb-md">SOCIETY PRO</h2>
+<div class="flex items-center gap-sm p-sm rounded-lg recessed bg-surface-container">
+<img alt="Admin Avatar" class="w-12 h-12 rounded-lg object-cover" data-alt="A high-quality square avatar portrait of a society administrator with short dark hair, wearing a crisp white shirt, neutral background, well-lit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-DaOwwFpcCR6i0W77-Pv4_pCkdV2dQIgHM2T5OK-ckm5bE5l61lhcZLEv9fSn7PVb-DC-cd_WEELAze7VUZBRmtcBXw2-V3RbqVwFtZz3qQFnPI-QewdUsbXJU87VkrJW-zpGNNxXaV7ABpXJ_bm3S707kwXlb5-rFlprAzjiSTY4t2BefWzf5qPfqT6SuYYF4A4rxOXI5LzM4gxkkHYbY9IQKkFIEBot0pWN_ngpBFvLeEN8HnpHji2qwtj4eGEPxhM5a9ZvvMCH"/>
+<div>
+<p class="font-label-md font-bold text-primary">Society Admin</p>
+<p class="font-label-sm text-secondary">Tower A - 402</p>
+<p class="font-label-sm text-tertiary-container opacity-70">Super User</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto px-xs">
+<!-- Bookings Tab Active -->
+<a class="flex items-center gap-sm bg-secondary-container text-primary shadow-[inset_-4px_-4px_8px_#FFFFFF,inset_4px_4px_8px_#BEBEBE] rounded-lg mx-2 my-1 p-sm font-label-md uppercase" href="#">
+<span class="material-symbols-outlined">event_seat</span>
+                    Bookings
+                </a>
+<a class="flex items-center gap-sm text-secondary mx-2 my-1 p-sm font-label-md uppercase hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] active:shadow-inner rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+                    Tenants
+                </a>
+<a class="flex items-center gap-sm text-secondary mx-2 my-1 p-sm font-label-md uppercase hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] active:shadow-inner rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">celebration</span>
+                    Functions
+                </a>
+<a class="flex items-center gap-sm text-secondary mx-2 my-1 p-sm font-label-md uppercase hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] active:shadow-inner rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">emergency</span>
+                    Emergency
+                </a>
+<a class="flex items-center gap-sm text-secondary mx-2 my-1 p-sm font-label-md uppercase hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] active:shadow-inner rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">local_parking</span>
+                    Parking
+                </a>
+<!-- Additional Nav Items omitted for brevity in design sample -->
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full px-margin-mobile md:px-gutter py-md pb-[100px] md:pb-lg grid grid-cols-4 md:grid-cols-12 gap-gutter md:gap-md overflow-y-auto">
+<div class="col-span-4 md:col-span-12 mb-sm">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-primary tracking-tight">Operations &amp; Bookings</h2>
+<p class="text-secondary font-body-md mt-1">Manage society facilities and resources.</p>
+</div>
+<!-- Booking Management -->
+<section class="col-span-4 md:col-span-8 flex flex-col gap-sm">
+<div class="flex items-center justify-between mb-2">
+<h3 class="font-headline-md text-on-surface">Recent Requests</h3>
+<button class="font-label-md text-primary uppercase bg-surface-container rounded-full px-4 py-2 extruded extruded-hover extruded-active transition-all">Filter</button>
+</div>
+<!-- Booking Item 1 -->
+<div class="extruded rounded-xl p-md flex flex-col gap-sm bg-background">
+<div class="flex justify-between items-start">
+<div class="flex gap-sm items-center">
+<div class="w-12 h-12 rounded-lg recessed flex items-center justify-center bg-surface-container-low text-primary">
+<span class="material-symbols-outlined">celebration</span>
+</div>
+<div>
+<h4 class="font-label-md font-bold text-primary uppercase">Main Clubhouse</h4>
+<p class="font-label-sm text-secondary">Apt 302 • John Doe</p>
+</div>
+</div>
+<span class="font-label-sm text-primary-container bg-surface-variant px-2 py-1 rounded-md recessed">Pending</span>
+</div>
+<div class="h-[1px] w-full bg-outline-variant opacity-30 my-1"></div>
+<div class="flex justify-between items-center">
+<p class="font-label-md text-on-surface-variant">Tomorrow, 6:00 PM - 10:00 PM</p>
+<div class="flex gap-xs">
+<button class="w-10 h-10 rounded-lg recessed flex items-center justify-center text-error hover:bg-error-container transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+<button class="w-10 h-10 rounded-lg extruded extruded-hover extruded-active flex items-center justify-center bg-primary text-on-primary transition-all">
+<span class="material-symbols-outlined">check</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Booking Item 2 -->
+<div class="extruded rounded-xl p-md flex flex-col gap-sm bg-background">
+<div class="flex justify-between items-start">
+<div class="flex gap-sm items-center">
+<div class="w-12 h-12 rounded-lg recessed flex items-center justify-center bg-surface-container-low text-primary">
+<span class="material-symbols-outlined">pool</span>
+</div>
+<div>
+<h4 class="font-label-md font-bold text-primary uppercase">Swimming Pool</h4>
+<p class="font-label-sm text-secondary">Apt 105 • Sarah Smith</p>
+</div>
+</div>
+<span class="font-label-sm text-on-surface bg-surface-variant px-2 py-1 rounded-md recessed">Approved</span>
+</div>
+<div class="h-[1px] w-full bg-outline-variant opacity-30 my-1"></div>
+<div class="flex justify-between items-center">
+<p class="font-label-md text-on-surface-variant">Today, 4:00 PM - 5:00 PM</p>
+<button class="font-label-sm text-secondary uppercase tracking-wider px-3 py-2 rounded-lg recessed">Revoke</button>
+</div>
+</div>
+</section>
+<!-- Emergency & Quick Actions Sidebar -->
+<section class="col-span-4 md:col-span-4 flex flex-col gap-gutter">
+<!-- Emergency Contacts -->
+<div class="extruded rounded-xl p-md bg-background">
+<h3 class="font-headline-md text-on-surface mb-md">Emergency</h3>
+<div class="grid grid-cols-2 gap-sm">
+<button class="flex flex-col items-center justify-center gap-2 p-sm rounded-lg recessed text-primary hover:bg-surface-container transition-colors">
+<div class="w-10 h-10 rounded-full extruded flex items-center justify-center bg-error text-on-error">
+<span class="material-symbols-outlined">local_hospital</span>
+</div>
+<span class="font-label-sm uppercase">Ambulance</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 p-sm rounded-lg recessed text-primary hover:bg-surface-container transition-colors">
+<div class="w-10 h-10 rounded-full extruded flex items-center justify-center bg-primary text-on-primary">
+<span class="material-symbols-outlined">local_police</span>
+</div>
+<span class="font-label-sm uppercase">Police</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 p-sm rounded-lg recessed text-primary hover:bg-surface-container transition-colors col-span-2 mt-2">
+<div class="w-10 h-10 rounded-full extruded flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">security</span>
+</div>
+<span class="font-label-sm uppercase">Main Gate Guard</span>
+</button>
+</div>
+</div>
+<!-- Flat Allocation Overview -->
+<div class="extruded rounded-xl p-md bg-background">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-headline-md text-on-surface">Occupancy</h3>
+<span class="material-symbols-outlined text-secondary">domain</span>
+</div>
+<div class="flex flex-col gap-sm">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-full recessed flex items-center justify-center relative">
+<!-- Minimal Neomorphic gauge representation -->
+<svg class="w-14 h-14 transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-variant stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="3"></path>
+<path class="text-primary stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="85, 100" stroke-width="3"></path>
+</svg>
+<span class="absolute font-label-md font-bold">85%</span>
+</div>
+<div>
+<p class="font-label-md font-bold text-primary">Occupied: 170</p>
+<p class="font-label-sm text-secondary">Available: 30</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl shadow-[-2px_-4px_8px_#BEBEBE] bg-background md:hidden flex justify-around items-center px-2 py-3">
+<a class="flex flex-col items-center justify-center text-secondary p-2" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary p-2" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-sm text-label-sm mt-1">Finances</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold shadow-[inset_-4px_-4px_8px_#FFFFFF,inset_4px_4px_8px_#BEBEBE] rounded-lg p-2 bg-surface-container" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu</span>
+<span class="font-label-sm text-label-sm mt-1">More</span>
+</a>
+</nav>
+</body></html>

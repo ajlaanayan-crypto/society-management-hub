@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vehicle Management - Guard Dashboard</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed": "#e4e2e1",
+                        "on-primary-container": "#b0aeae",
+                        "inverse-surface": "#303031",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-tint": "#5f5e5e",
+                        "outline-variant": "#c4c7c7",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e9e8e7",
+                        "on-background": "#1b1c1c",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#5f5e5e",
+                        "on-primary-fixed-variant": "#474747",
+                        "inverse-on-surface": "#f2f0f0",
+                        "on-tertiary-container": "#b3adad",
+                        "tertiary": "#2f2b2b",
+                        "tertiary-fixed-dim": "#ccc5c5",
+                        "on-tertiary-fixed": "#1e1b1b",
+                        "on-primary": "#ffffff",
+                        "surface": "#fbf9f9",
+                        "surface-bright": "#fbf9f9",
+                        "primary": "#2c2c2c",
+                        "on-secondary-fixed-variant": "#474646",
+                        "surface-variant": "#e3e2e2",
+                        "on-primary-fixed": "#1b1c1c",
+                        "tertiary-container": "#454141",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-secondary-container": "#656464",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#444748",
+                        "primary-container": "#424242",
+                        "outline": "#747878",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#e8e1e0",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#dbdad9",
+                        "on-tertiary-fixed-variant": "#4a4646",
+                        "background": "#fbf9f9",
+                        "surface-container": "#efeded",
+                        "primary-fixed-dim": "#c8c6c6",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#e5e2e1",
+                        "on-surface": "#1b1c1c",
+                        "surface-container-highest": "#e3e2e2",
+                        "surface-container-low": "#f5f3f3",
+                        "inverse-primary": "#c8c6c6"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "md": "24px",
+                        "xl": "80px",
+                        "margin-mobile": "16px",
+                        "lg": "48px",
+                        "margin-desktop": "64px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "gutter": "24px"
+                    },
+                    fontFamily: {
+                        "label-sm": ["Manrope"],
+                        "label-md": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "headline-sm": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "body-lg": ["Manrope"]
+                    },
+                    fontSize: {
+                        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "600" }],
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }],
+                        "headline-md": ["32px", { lineHeight: "40px", fontWeight: "700" }],
+                        "headline-lg-mobile": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "headline-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "headline-sm": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Base Neomorphic Utilities */
+        .neo-extruded {
+            box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+        }
+        .neo-pressed {
+            box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff;
+        }
+        .neo-extruded-sm {
+            box-shadow: 3px 3px 6px #bebebe, -3px -3px 6px #ffffff;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface dark:bg-surface-dim shadow-[5px_5px_10px_#bebebe,-5px_-5px_10px_#ffffff] dark:shadow-none flex justify-between items-center px-margin-mobile py-base z-40">
+<div class="flex items-center gap-2 text-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined font-headline-sm text-headline-sm">shield</span>
+</div>
+<h1 class="font-headline-sm text-headline-sm font-bold tracking-tight text-primary dark:text-primary-fixed">SOCIETY PRO</h1>
+<div class="flex items-center gap-2 text-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined font-headline-sm text-headline-sm">account_circle</span>
+</div>
+</header>
+<main class="pb-24 pt-md px-margin-mobile md:px-margin-desktop space-y-lg max-w-7xl mx-auto">
+<!-- Header Actions -->
+<div class="flex flex-col md:flex-row justify-between items-center gap-md">
+<h2 class="font-headline-md text-headline-md text-primary w-full md:w-auto">Vehicle Logs</h2>
+<button class="w-full md:w-auto bg-surface text-primary font-label-md text-label-md py-sm px-md rounded-xl neo-extruded hover:opacity-80 active:neo-pressed transition-all duration-200 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+                Scan Plate
+            </button>
+</div>
+<!-- Dashboard Grid (Bento Layout) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-md">
+<!-- Parking Slots (Guest) -->
+<div class="md:col-span-4 bg-surface rounded-xl neo-extruded p-md flex flex-col gap-sm">
+<h3 class="font-label-md text-label-md text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">local_parking</span>
+                    Guest Parking Slots
+                </h3>
+<div class="grid grid-cols-3 gap-sm mt-2">
+<div class="bg-surface rounded-lg p-2 neo-pressed flex flex-col items-center justify-center text-error">
+<span class="font-label-sm text-label-sm">G-01</span>
+<span class="material-symbols-outlined text-[16px]">directions_car</span>
+</div>
+<div class="bg-surface rounded-lg p-2 neo-extruded-sm flex flex-col items-center justify-center text-outline">
+<span class="font-label-sm text-label-sm">G-02</span>
+<span class="font-label-sm text-label-sm text-[10px]">OPEN</span>
+</div>
+<div class="bg-surface rounded-lg p-2 neo-extruded-sm flex flex-col items-center justify-center text-outline">
+<span class="font-label-sm text-label-sm">G-03</span>
+<span class="font-label-sm text-label-sm text-[10px]">OPEN</span>
+</div>
+<div class="bg-surface rounded-lg p-2 neo-pressed flex flex-col items-center justify-center text-error">
+<span class="font-label-sm text-label-sm">G-04</span>
+<span class="material-symbols-outlined text-[16px]">local_taxi</span>
+</div>
+</div>
+</div>
+<!-- Blacklisted Warning Section -->
+<div class="md:col-span-8 bg-surface rounded-xl neo-extruded p-md flex flex-col gap-sm border-l-4 border-error">
+<h3 class="font-label-md text-label-md text-error flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+                    Blacklisted Vehicles
+                </h3>
+<div class="bg-surface rounded-lg neo-pressed p-sm flex items-center justify-between">
+<div>
+<p class="font-label-md text-label-md text-primary">KA-01-AB-1234</p>
+<p class="font-label-sm text-label-sm text-secondary">Reason: Unauthorized extended parking</p>
+</div>
+<button class="bg-surface text-secondary font-label-sm text-label-sm p-2 rounded-full neo-extruded-sm active:neo-pressed">
+<span class="material-symbols-outlined text-[18px]">info</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Search & Filter -->
+<div class="w-full bg-surface rounded-xl neo-pressed px-md py-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">search</span>
+<input class="bg-transparent border-none outline-none w-full text-primary font-body-md focus:ring-0" placeholder="Search plates, flat number..." type="text"/>
+</div>
+<!-- Data Lists -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Entry Log -->
+<div class="bg-surface rounded-xl neo-extruded p-md flex flex-col gap-md">
+<h3 class="font-label-md text-label-md text-secondary">Recent Entry Log</h3>
+<div class="flex items-center gap-md pb-sm border-b border-surface-variant">
+<div class="w-10 h-10 rounded-full neo-extruded flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">two_wheeler</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-primary">MH-12-PQ-9988</p>
+<p class="font-label-sm text-label-sm text-secondary">Swiggy Delivery • 2 mins ago</p>
+</div>
+<span class="font-label-sm text-label-sm text-outline">OUT</span>
+</div>
+<div class="flex items-center gap-md pb-sm">
+<div class="w-10 h-10 rounded-full neo-extruded flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">directions_car</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-primary">KA-05-XY-5544</p>
+<p class="font-label-sm text-label-sm text-secondary">Resident • Flat A-204 • 15 mins ago</p>
+</div>
+<span class="font-label-sm text-label-sm text-outline">IN</span>
+</div>
+</div>
+<!-- Registered Vehicles -->
+<div class="bg-surface rounded-xl neo-extruded p-md flex flex-col gap-md">
+<h3 class="font-label-md text-label-md text-secondary">Registered Residents</h3>
+<div class="flex items-center justify-between p-sm rounded-lg neo-extruded-sm">
+<div>
+<p class="font-label-md text-label-md text-primary">DL-4C-BN-0099</p>
+<p class="font-label-sm text-label-sm text-secondary">Mr. Sharma • Flat B-101</p>
+</div>
+<span class="material-symbols-outlined text-outline">verified</span>
+</div>
+<div class="flex items-center justify-between p-sm rounded-lg neo-extruded-sm">
+<div>
+<p class="font-label-md text-label-md text-primary">MH-14-AZ-7766</p>
+<p class="font-label-sm text-label-sm text-secondary">Mrs. Gupta • Flat C-405</p>
+</div>
+<span class="material-symbols-outlined text-outline">verified</span>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 bg-surface shadow-[-5px_-5px_15px_#ffffff,5px_5px_15px_#bebebe] z-50 rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed p-2 hover:text-primary-fixed-variant active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-sm text-label-sm">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed p-2 hover:text-primary-fixed-variant active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-sm text-label-sm">Visitors</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff] rounded-lg p-2 hover:text-primary-fixed-variant active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined font-variation-settings: 'FILL' 1;">minor_crash</span>
+<span class="font-label-sm text-label-sm">Vehicles</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed p-2 hover:text-primary-fixed-variant active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">fingerprint</span>
+<span class="font-label-sm text-label-sm">Attendance</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed p-2 hover:text-primary-fixed-variant active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">menu</span>
+<span class="font-label-sm text-label-sm">More</span>
+</a>
+</nav>
+</body></html>

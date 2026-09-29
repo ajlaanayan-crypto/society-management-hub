@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Society Pro - Notices</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed-dim": "#ccc5c5",
+                      "secondary-fixed": "#e5e2e1",
+                      "on-surface-variant": "#444748",
+                      "on-tertiary-fixed": "#1e1b1b",
+                      "surface": "#fbf9f9",
+                      "inverse-on-surface": "#f2f0f0",
+                      "on-error": "#ffffff",
+                      "surface-dim": "#dbdad9",
+                      "surface-variant": "#e3e2e2",
+                      "primary-container": "#424242",
+                      "tertiary": "#2f2b2b",
+                      "on-secondary-container": "#656464",
+                      "primary-fixed": "#e4e2e1",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "secondary": "#5f5e5e",
+                      "inverse-surface": "#303031",
+                      "surface-container-highest": "#e3e2e2",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "on-background": "#1b1c1c",
+                      "background": "#fbf9f9",
+                      "outline-variant": "#c4c7c7",
+                      "on-surface": "#1b1c1c",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed-variant": "#4a4646",
+                      "on-secondary-fixed-variant": "#474646",
+                      "error-container": "#ffdad6",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container": "#efeded",
+                      "on-primary-fixed-variant": "#474747",
+                      "inverse-primary": "#c8c6c6",
+                      "on-tertiary-container": "#b3adad",
+                      "on-tertiary": "#ffffff",
+                      "surface-bright": "#fbf9f9",
+                      "secondary-container": "#e5e2e1",
+                      "surface-container-high": "#e9e8e7",
+                      "on-primary": "#ffffff",
+                      "on-primary-container": "#b0aeae",
+                      "on-error-container": "#93000a",
+                      "primary": "#2c2c2c",
+                      "tertiary-container": "#454141",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed": "#e8e1e0",
+                      "surface-tint": "#5f5e5e",
+                      "primary-fixed-dim": "#c8c6c6",
+                      "surface-container-low": "#f5f3f3",
+                      "on-primary-fixed": "#1b1c1c",
+                      "outline": "#747878"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "24px",
+                      "margin-desktop": "64px",
+                      "xl": "80px",
+                      "sm": "12px",
+                      "gutter": "24px",
+                      "lg": "48px",
+                      "margin-mobile": "16px",
+                      "xs": "4px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "headline-sm": ["Manrope"],
+                      "body-md": ["Manrope"],
+                      "label-md": ["Manrope"],
+                      "label-sm": ["Manrope"],
+                      "headline-lg-mobile": ["Manrope"],
+                      "headline-lg": ["Manrope"],
+                      "headline-md": ["Manrope"],
+                      "body-lg": ["Manrope"]
+              },
+              "fontSize": {
+                      "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #fbf9f9;
+        }
+        .neo-out {
+            box-shadow: -6px -6px 12px #FFFFFF, 6px 6px 12px #BEBEBE;
+        }
+        .neo-in {
+            box-shadow: inset -6px -6px 12px #FFFFFF, inset 6px 6px 12px #BEBEBE;
+        }
+        .neo-out-sm {
+            box-shadow: -4px -4px 8px #FFFFFF, 4px 4px 8px #BEBEBE;
+        }
+        .neo-in-sm {
+            box-shadow: inset -4px -4px 8px #FFFFFF, inset 4px 4px 8px #BEBEBE;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-background font-body-md bg-background min-h-screen flex flex-col md:flex-row pb-20 md:pb-0">
+<!-- TopAppBar (Mobile) -->
+<header class="md:hidden w-full top-0 sticky z-40 bg-background flex justify-between items-center px-margin-mobile py-sm no-border shadow-[-6px_-6px_12px_#FFFFFF,6px_6px_12px_#BEBEBE]">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full neo-out overflow-hidden flex-shrink-0">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A macro shot of a sleek, abstract metallic profile avatar icon, rendered in soft light grey tones. The object is perfectly circular, resting on a matte light-grey surface. Studio lighting highlights the subtle curves and creates a gentle shadow, conveying a premium, clean, light-mode neomorphic aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5d9woe-ibJhuix6C3_NG7QZj-xX8B07-p8gSLah66SdZoqxovkUQcbp9CSPPuboGf-3oWFMl95AK8NJh8ulWlRhKKUfYzJXV-h7MI2jb9g5tWM_UzoBrn6pkvmqxYCS2mXDqQvguBYJsxJaBg-H-pGzNb_Qo9jQkzJzrLklP4HFAgEdyvdIQJTDqLVtwSBQY9rJnciXd-v6daSBL4t0xYxKeAiKdU62XqekK8YRttjPsdk6ndVF3Ai7vWEo0fjHZJErFP2-7uvkdO"/>
+</div>
+<h1 class="font-display text-headline-md-mobile font-extrabold text-primary">SOCIETY PRO</h1>
+</div>
+<button class="w-10 h-10 rounded-full neo-out flex items-center justify-center text-primary active:shadow-[inset_-6px_-6px_12px_#FFFFFF,inset_6px_6px_12px_#BEBEBE] transition-all hover:scale-105">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">notifications</span>
+</button>
+</header>
+<!-- NavigationDrawer (Desktop) -->
+<aside class="hidden md:flex flex-col h-screen w-72 rounded-r-xl bg-background shadow-[6px_0_12px_#BEBEBE] z-50 sticky top-0 py-lg">
+<div class="px-md mb-lg">
+<h1 class="font-display text-headline-md-mobile text-primary font-extrabold mb-sm">SOCIETY PRO</h1>
+<div class="flex items-center gap-sm mt-md neo-in p-sm rounded-xl">
+<div class="w-12 h-12 rounded-full overflow-hidden neo-out">
+<img alt="Admin Avatar" class="w-full h-full object-cover" data-alt="A macro shot of a sleek, abstract metallic profile avatar icon, rendered in soft light grey tones. The object is perfectly circular, resting on a matte light-grey surface. Studio lighting highlights the subtle curves and creates a gentle shadow, conveying a premium, clean, light-mode neomorphic aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0QJBTusihOPe9M-ekan7eJyiKOFvLGtEk9e4qxWT9wXJWSZoSMUNKIRHsGSNP74aICUapYyjlmTIRJD00nVoRDQVvIL6j_FMw0spDq-JNIo4o4O01ZLI-YywrHVpByebdSXTaWOjyCdb8YuSdvX5dq0JiKRexyHH50Y7CaaM4gyTCjECo4ucW-tULGIHhKgx2kRFGxH_TnEnMX9hxb2N80TFd9NpST6qlgtWwzq2KRHF8KQ44jEML5L00xvglvEYyBfvTDLMqrCxx"/>
+</div>
+<div>
+<h2 class="font-label-md text-primary">Society Admin</h2>
+<p class="font-label-sm text-secondary">Tower A - 402</p>
+<p class="font-label-sm text-tertiary-container text-xs">Super User</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto hide-scrollbar flex flex-col gap-xs px-xs">
+<a class="flex items-center gap-sm px-sm py-xs text-secondary mx-2 my-1 hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-md">Tenants</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs text-secondary mx-2 my-1 hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">person_add</span>
+<span class="font-label-md">Onboarding</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs bg-secondary-container text-primary shadow-[inset_-4px_-4px_8px_#FFFFFF,inset_4px_4px_8px_#BEBEBE] rounded-lg mx-2 my-1 transition-all" href="#">
+<span class="material-symbols-outlined">announcement</span>
+<span class="font-label-md">Broadcast</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs text-secondary mx-2 my-1 hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">event_seat</span>
+<span class="font-label-md">Bookings</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs text-secondary mx-2 my-1 hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">celebration</span>
+<span class="font-label-md">Functions</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs text-secondary mx-2 my-1 hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">emergency</span>
+<span class="font-label-md">Emergency</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs text-secondary mx-2 my-1 hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">domain</span>
+<span class="font-label-md">Allocation</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs text-secondary mx-2 my-1 hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-label-md">Revenue</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs text-secondary mx-2 my-1 hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">local_parking</span>
+<span class="font-label-md">Fines</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs text-secondary mx-2 my-1 hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">how_to_vote</span>
+<span class="font-label-md">Voting</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs text-secondary mx-2 my-1 hover:shadow-[-2px_-2px_5px_#FFFFFF,2px_2px_5px_#BEBEBE] rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">admin_panel_settings</span>
+<span class="font-label-md">Management</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 px-margin-mobile md:px-margin-desktop py-md md:py-lg overflow-x-hidden">
+<header class="mb-lg flex justify-between items-end">
+<div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-primary mb-xs">Notices &amp; Updates</h1>
+<p class="font-body-md text-secondary">Stay informed with the latest community announcements.</p>
+</div>
+<div class="hidden md:flex gap-sm">
+<div class="neo-in rounded-full px-sm py-xs flex items-center gap-xs">
+<span class="material-symbols-outlined text-secondary text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-32 font-body-md text-primary placeholder:text-outline" placeholder="Search notices..." type="text"/>
+</div>
+<button class="neo-out w-10 h-10 rounded-full flex items-center justify-center text-primary hover:shadow-[-4px_-4px_8px_#FFFFFF,4px_4px_8px_#BEBEBE] active:shadow-[inset_-4px_-4px_8px_#FFFFFF,inset_4px_4px_8px_#BEBEBE] transition-all">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-md md:gap-lg">
+<!-- Important Announcements (Priority) -->
+<section class="md:col-span-12">
+<h2 class="font-headline-sm text-primary mb-md flex items-center gap-xs"><span class="material-symbols-outlined text-error">priority_high</span> Urgent Announcements</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Urgent Card 1 -->
+<article class="neo-out rounded-xl p-md flex flex-col relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-error-container rounded-bl-full -mr-2 -mt-2 neo-in opacity-50"></div>
+<div class="flex justify-between items-start mb-sm relative z-10">
+<span class="bg-error-container text-error font-label-sm px-xs py-xs rounded neo-in-sm">URGENT</span>
+<span class="font-label-sm text-secondary">Today, 09:00 AM</span>
+</div>
+<h3 class="font-headline-sm text-primary mb-xs relative z-10">Water Supply Interruption</h3>
+<p class="font-body-md text-on-surface-variant mb-md flex-1 relative z-10">Scheduled maintenance for Tower B overhead tanks. Water supply will be unavailable from 11:00 AM to 03:00 PM.</p>
+<div class="flex items-center gap-xs text-secondary font-label-sm relative z-10">
+<span class="material-symbols-outlined text-sm">engineering</span> Maintenance Dept
+                        </div>
+</article>
+<!-- Urgent Card 2 -->
+<article class="neo-out rounded-xl p-md flex flex-col relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-surface-tint rounded-bl-full -mr-2 -mt-2 neo-in opacity-20"></div>
+<div class="flex justify-between items-start mb-sm relative z-10">
+<span class="bg-surface-variant text-primary font-label-sm px-xs py-xs rounded neo-in-sm">HIGH PRIORITY</span>
+<span class="font-label-sm text-secondary">Yesterday, 14:30</span>
+</div>
+<h3 class="font-headline-sm text-primary mb-xs relative z-10">AGM Meeting Tomorrow</h3>
+<p class="font-body-md text-on-surface-variant mb-md flex-1 relative z-10">Annual General Meeting will commence at the Clubhouse. All flat owners are requested to be present by 10:00 AM sharp.</p>
+<div class="flex items-center gap-xs text-secondary font-label-sm relative z-10">
+<span class="material-symbols-outlined text-sm">gavel</span> Management Committee
+                        </div>
+</article>
+</div>
+</section>
+<!-- General Feed & Calendar Split -->
+<div class="md:col-span-8 flex flex-col gap-lg">
+<!-- General Notices Feed -->
+<section>
+<h2 class="font-headline-sm text-primary mb-md">Recent Updates</h2>
+<div class="flex flex-col gap-md">
+<!-- Notice Item -->
+<div class="neo-out rounded-xl p-md flex gap-md items-start">
+<div class="w-12 h-12 rounded-full neo-in flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined">campaign</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-baseline mb-xs">
+<h3 class="font-label-md text-primary text-lg">Pest Control Schedule</h3>
+<span class="font-label-sm text-secondary">Oct 24</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-sm">Quarterly pest control for common areas will take place this weekend. Please ensure pets are kept indoors.</p>
+<div class="flex gap-sm">
+<span class="neo-in-sm rounded px-xs py-xs font-label-sm text-secondary">Maintenance</span>
+</div>
+</div>
+</div>
+<!-- Notice Item -->
+<div class="neo-out rounded-xl p-md flex gap-md items-start">
+<div class="w-12 h-12 rounded-full neo-in flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined">sports_tennis</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-baseline mb-xs">
+<h3 class="font-label-md text-primary text-lg">Tennis Court Renovation</h3>
+<span class="font-label-sm text-secondary">Oct 22</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-sm">The synthetic turf replacement is complete. Courts will reopen for booking starting Monday.</p>
+<div class="flex gap-sm">
+<span class="neo-in-sm rounded px-xs py-xs font-label-sm text-secondary">Facilities</span>
+<span class="neo-in-sm rounded px-xs py-xs font-label-sm text-secondary">Good News</span>
+</div>
+</div>
+</div>
+<!-- Notice Item -->
+<div class="neo-out rounded-xl p-md flex gap-md items-start">
+<div class="w-12 h-12 rounded-full neo-in flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-baseline mb-xs">
+<h3 class="font-label-md text-primary text-lg">New Courier Drop-off Rules</h3>
+<span class="font-label-sm text-secondary">Oct 20</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-sm">All deliveries above 5kg must use the service elevator. Please inform your delivery partners.</p>
+<div class="flex gap-sm">
+<span class="neo-in-sm rounded px-xs py-xs font-label-sm text-secondary">Security</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- MOM Archive -->
+<section>
+<div class="flex justify-between items-center mb-md">
+<h2 class="font-headline-sm text-primary">Minutes of Meetings (MOM)</h2>
+<a class="font-label-md text-secondary hover:text-primary transition-colors" href="#">View All</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-md">
+<div class="neo-out rounded-lg p-sm flex flex-col items-center justify-center text-center cursor-pointer hover:shadow-[-4px_-4px_8px_#FFFFFF,4px_4px_8px_#BEBEBE] active:shadow-[inset_-4px_-4px_8px_#FFFFFF,inset_4px_4px_8px_#BEBEBE] transition-all group">
+<div class="w-10 h-10 neo-in rounded-full flex items-center justify-center mb-xs group-hover:text-primary text-secondary transition-colors">
+<span class="material-symbols-outlined">description</span>
+</div>
+<h4 class="font-label-md text-primary">Q3 Board Meet</h4>
+<p class="font-label-sm text-secondary">Oct 15, 2023</p>
+</div>
+<div class="neo-out rounded-lg p-sm flex flex-col items-center justify-center text-center cursor-pointer hover:shadow-[-4px_-4px_8px_#FFFFFF,4px_4px_8px_#BEBEBE] active:shadow-[inset_-4px_-4px_8px_#FFFFFF,inset_4px_4px_8px_#BEBEBE] transition-all group">
+<div class="w-10 h-10 neo-in rounded-full flex items-center justify-center mb-xs group-hover:text-primary text-secondary transition-colors">
+<span class="material-symbols-outlined">description</span>
+</div>
+<h4 class="font-label-md text-primary">Special Budget</h4>
+<p class="font-label-sm text-secondary">Sep 02, 2023</p>
+</div>
+<div class="neo-out rounded-lg p-sm flex flex-col items-center justify-center text-center cursor-pointer hover:shadow-[-4px_-4px_8px_#FFFFFF,4px_4px_8px_#BEBEBE] active:shadow-[inset_-4px_-4px_8px_#FFFFFF,inset_4px_4px_8px_#BEBEBE] transition-all group">
+<div class="w-10 h-10 neo-in rounded-full flex items-center justify-center mb-xs group-hover:text-primary text-secondary transition-colors">
+<span class="material-symbols-outlined">description</span>
+</div>
+<h4 class="font-label-md text-primary">Q2 Board Meet</h4>
+<p class="font-label-sm text-secondary">Jul 18, 2023</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Calendar Sidebar -->
+<aside class="md:col-span-4 flex flex-col gap-lg">
+<div class="neo-out rounded-xl p-md">
+<h2 class="font-headline-sm text-primary mb-md text-center">October 2023</h2>
+<!-- Faux Calendar Grid -->
+<div class="grid grid-cols-7 gap-xs text-center mb-md">
+<div class="font-label-sm text-secondary">Mo</div><div class="font-label-sm text-secondary">Tu</div><div class="font-label-sm text-secondary">We</div><div class="font-label-sm text-secondary">Th</div><div class="font-label-sm text-secondary">Fr</div><div class="font-label-sm text-secondary">Sa</div><div class="font-label-sm text-secondary">Su</div>
+<!-- Week 1 (empty days) -->
+<div></div><div></div><div></div><div></div>
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">1</div>
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">2</div>
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">3</div>
+<!-- Week 2 -->
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">4</div>
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">5</div>
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">6</div>
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">7</div>
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto relative"><span class="absolute bottom-1 w-1 h-1 bg-primary rounded-full"></span>8</div>
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">9</div>
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">10</div>
+<!-- Week 3 -->
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">11</div>
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">12</div>
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">13</div>
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">14</div>
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto relative"><span class="absolute bottom-1 w-1 h-1 bg-primary rounded-full"></span>15</div>
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">16</div>
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">17</div>
+<!-- Week 4 -->
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">18</div>
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">19</div>
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">20</div>
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">21</div>
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">22</div>
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">23</div>
+<div class="w-8 h-8 rounded-full neo-in flex items-center justify-center font-body-md font-bold text-primary mx-auto relative"><span class="absolute bottom-1 w-1 h-1 bg-error rounded-full"></span>24</div> <!-- Active Day -->
+<!-- Week 5 -->
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">25</div>
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto relative"><span class="absolute bottom-1 w-1 h-1 bg-primary rounded-full"></span>26</div>
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">27</div>
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">28</div>
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">29</div>
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">30</div>
+<div class="w-8 h-8 rounded-full flex items-center justify-center font-body-md text-on-surface-variant mx-auto">31</div>
+</div>
+<div class="border-t border-surface-variant pt-md">
+<h3 class="font-label-md text-primary mb-sm">Upcoming Events</h3>
+<div class="flex flex-col gap-sm">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-lg neo-in flex flex-col items-center justify-center flex-shrink-0">
+<span class="font-label-sm text-error leading-tight">OCT</span>
+<span class="font-label-md text-primary leading-tight">26</span>
+</div>
+<div>
+<h4 class="font-label-md text-primary">Diwali Mela</h4>
+<p class="font-label-sm text-secondary">Central Lawn • 18:00</p>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-lg neo-in flex flex-col items-center justify-center flex-shrink-0">
+<span class="font-label-sm text-secondary leading-tight">NOV</span>
+<span class="font-label-md text-primary leading-tight">05</span>
+</div>
+<div>
+<h4 class="font-label-md text-primary">Blood Donation Camp</h4>
+<p class="font-label-sm text-secondary">Clubhouse • 09:00</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Action -->
+<button class="neo-out w-full py-sm rounded-xl font-label-md text-primary hover:shadow-[-4px_-4px_8px_#FFFFFF,4px_4px_8px_#BEBEBE] active:shadow-[inset_-4px_-4px_8px_#FFFFFF,inset_4px_4px_8px_#BEBEBE] transition-all flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-sm">add_circle</span> Add Calendar to Device
+                </button>
+</aside>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-background shadow-[-2px_-4px_8px_#BEBEBE] flex justify-around items-center px-2 py-3">
+<a class="flex flex-col items-center justify-center text-secondary p-2 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary p-2 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-sm text-label-sm">Finances</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold shadow-[inset_-4px_-4px_8px_#FFFFFF,inset_4px_4px_8px_#BEBEBE] rounded-lg p-2 active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-label-sm text-label-sm">Notices</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary p-2 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-label-sm text-label-sm">Complaints</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary p-2 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">menu</span>
+<span class="font-label-sm text-label-sm">More</span>
+</a>
+</nav>
+</body></html>

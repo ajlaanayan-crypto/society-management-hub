@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Finance &amp; Payments - Society Pro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;family=Jetbrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-error-container": "#93000a",
+                "surface": "#fbf9f9",
+                "surface-container-high": "#e9e8e7",
+                "on-secondary-fixed": "#1c1b1b",
+                "on-secondary-fixed-variant": "#474646",
+                "on-primary-fixed-variant": "#474747",
+                "secondary-fixed": "#e5e2e1",
+                "secondary": "#5f5e5e",
+                "on-tertiary-fixed": "#1e1b1b",
+                "secondary-container": "#e5e2e1",
+                "tertiary-fixed": "#e8e1e0",
+                "surface-dim": "#dbdad9",
+                "primary-fixed": "#e4e2e1",
+                "error-container": "#ffdad6",
+                "surface-container": "#efeded",
+                "on-error": "#ffffff",
+                "on-secondary": "#ffffff",
+                "error": "#ba1a1a",
+                "on-surface": "#1b1c1c",
+                "primary-container": "#424242",
+                "primary-fixed-dim": "#c8c6c6",
+                "surface-bright": "#fbf9f9",
+                "inverse-primary": "#c8c6c6",
+                "surface-tint": "#5f5e5e",
+                "surface-container-lowest": "#ffffff",
+                "tertiary-fixed-dim": "#ccc5c5",
+                "surface-variant": "#e3e2e2",
+                "on-primary": "#ffffff",
+                "tertiary": "#2f2b2b",
+                "on-primary-fixed": "#1b1c1c",
+                "secondary-fixed-dim": "#c8c6c5",
+                "outline": "#747878",
+                "surface-container-low": "#f5f3f3",
+                "on-primary-container": "#b0aeae",
+                "on-tertiary": "#ffffff",
+                "tertiary-container": "#454141",
+                "inverse-on-surface": "#f2f0f0",
+                "on-tertiary-fixed-variant": "#4a4646",
+                "on-secondary-container": "#656464",
+                "outline-variant": "#c4c7c7",
+                "on-background": "#1b1c1c",
+                "on-tertiary-container": "#b3adad",
+                "on-surface-variant": "#444748",
+                "background": "#fbf9f9",
+                "primary": "#2c2c2c",
+                "surface-container-highest": "#e3e2e2",
+                "inverse-surface": "#303031"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "base": "8px",
+                "margin-mobile": "16px",
+                "gutter": "24px",
+                "xl": "80px",
+                "sm": "12px",
+                "margin-desktop": "64px",
+                "md": "24px",
+                "xs": "4px",
+                "lg": "48px"
+        },
+        "fontFamily": {
+                "body-md": [
+                        "Manrope"
+                ],
+                "label-sm": [
+                        "Manrope"
+                ],
+                "headline-md": [
+                        "Manrope"
+                ],
+                "label-md": [
+                        "Manrope"
+                ],
+                "headline-lg": [
+                        "Manrope"
+                ],
+                "headline-lg-mobile": [
+                        "Manrope"
+                ],
+                "headline-sm": [
+                        "Manrope"
+                ],
+                "body-lg": [
+                        "Manrope"
+                ]
+        },
+        "fontSize": {
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-md": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "700"
+                        }
+                ],
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "headline-sm": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .neo-extruded {
+            box-shadow: -6px -6px 12px #FFFFFF, 6px 6px 12px #BEBEBE;
+        }
+        .neo-recessed {
+            box-shadow: inset -6px -6px 12px #FFFFFF, inset 6px 6px 12px #BEBEBE;
+        }
+        .neo-btn:active {
+            box-shadow: inset -6px -6px 12px #FFFFFF, inset 6px 6px 12px #BEBEBE;
+            transform: scale(0.98);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-background flex justify-between items-center px-margin-mobile py-sm no-border shadow-[-6px_-6px_12px_#FFFFFF,6px_6px_12px_#BEBEBE] transition-all">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full neo-extruded flex items-center justify-center bg-background text-primary">
+<span class="material-symbols-outlined">person</span>
+</div>
+<h1 class="font-headline-md text-headline-md-mobile font-extrabold text-primary tracking-tight uppercase">SOCIETY PRO</h1>
+</div>
+<button class="w-10 h-10 rounded-full neo-extruded flex items-center justify-center bg-background text-secondary hover:scale-105 transition-transform active:shadow-[inset_-6px_-6px_12px_#FFFFFF,inset_6px_6px_12px_#BEBEBE]">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<main class="p-margin-mobile flex flex-col gap-gutter md:max-w-[1200px] md:mx-auto pt-gutter">
+<!-- Bill Generation -->
+<section class="neo-extruded rounded-xl bg-background p-md flex flex-col gap-sm">
+<div class="flex items-center gap-sm text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<h2 class="font-headline-sm text-primary">Bill Generation</h2>
+</div>
+<p class="text-secondary font-body-md">Initiate monthly maintenance billing for all 120 units.</p>
+<button class="neo-btn neo-extruded bg-background text-primary font-label-md uppercase rounded-lg py-3 px-6 mt-2 flex items-center justify-center gap-2 transition-all w-full md:w-auto self-start">
+<span>Generate All Bills</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</section>
+<!-- Revenue Collection Chart -->
+<section class="neo-extruded rounded-xl bg-background p-md flex flex-col gap-sm">
+<div class="flex justify-between items-center w-full">
+<div class="flex items-center gap-sm text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bar_chart</span>
+<h2 class="font-headline-sm text-primary">Revenue</h2>
+</div>
+<span class="font-label-sm text-secondary bg-surface-container px-3 py-1 rounded-full neo-recessed">Q3 2023</span>
+</div>
+<div class="h-48 w-full flex items-end justify-between gap-2 mt-4 pt-4 border-t border-surface-variant">
+<!-- Chart Bars (Neomorphic) -->
+<div class="w-full h-full flex flex-col justify-end items-center gap-2">
+<div class="w-12 h-[60%] rounded-t-lg neo-extruded bg-background relative overflow-hidden group">
+<div class="absolute bottom-0 w-full h-full bg-gradient-to-t from-surface-dim to-transparent opacity-50"></div>
+</div>
+<span class="font-label-sm text-secondary">Jul</span>
+</div>
+<div class="w-full h-full flex flex-col justify-end items-center gap-2">
+<div class="w-12 h-[85%] rounded-t-lg neo-extruded bg-background relative overflow-hidden group">
+<div class="absolute bottom-0 w-full h-full bg-gradient-to-t from-surface-dim to-transparent opacity-50"></div>
+</div>
+<span class="font-label-sm text-secondary">Aug</span>
+</div>
+<div class="w-full h-full flex flex-col justify-end items-center gap-2">
+<div class="w-12 h-[40%] rounded-t-lg neo-extruded bg-background relative overflow-hidden group">
+<div class="absolute bottom-0 w-full h-full bg-gradient-to-t from-surface-dim to-transparent opacity-50"></div>
+</div>
+<span class="font-label-sm text-secondary">Sep</span>
+</div>
+</div>
+</section>
+<!-- Manual Payment Entry -->
+<section class="neo-extruded rounded-xl bg-background p-md flex flex-col gap-sm">
+<div class="flex items-center gap-sm text-primary mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">edit_document</span>
+<h2 class="font-headline-sm text-primary">Manual Entry</h2>
+</div>
+<form class="flex flex-col gap-4">
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-secondary pl-2">Flat Number</label>
+<div class="neo-recessed rounded-lg bg-background flex items-center px-4 py-1">
+<span class="material-symbols-outlined text-outline">apartment</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-outline font-body-md" placeholder="e.g. A-402" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-secondary pl-2">Amount Received</label>
+<div class="neo-recessed rounded-lg bg-background flex items-center px-4 py-1">
+<span class="material-symbols-outlined text-outline">payments</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-outline font-body-md" placeholder="0.00" type="number"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-secondary pl-2">Receipt Reference</label>
+<div class="neo-recessed rounded-lg bg-background flex items-center px-4 py-1">
+<span class="material-symbols-outlined text-outline">tag</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-outline font-body-md" placeholder="Transaction ID" type="text"/>
+</div>
+</div>
+<button class="neo-btn neo-extruded bg-primary text-on-primary font-label-md uppercase rounded-lg py-3 px-6 mt-4 flex items-center justify-center gap-2 transition-all w-full" type="button">
+<span>Submit Payment</span>
+</button>
+</form>
+</section>
+<!-- Late Payment Fines -->
+<section class="neo-extruded rounded-xl bg-background p-md flex flex-col gap-sm">
+<div class="flex justify-between items-center w-full mb-2">
+<div class="flex items-center gap-sm text-primary">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">warning</span>
+<h2 class="font-headline-sm text-primary">Overdue Fines</h2>
+</div>
+<span class="w-8 h-8 rounded-full neo-recessed flex items-center justify-center font-label-sm text-error font-bold">3</span>
+</div>
+<div class="flex flex-col gap-4 mt-2">
+<!-- List Item 1 -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 neo-recessed rounded-lg gap-4 bg-background">
+<div>
+<h3 class="font-headline-sm text-body-md font-bold text-on-surface">Unit B-105</h3>
+<p class="font-label-sm text-secondary">Overdue by 14 days</p>
+</div>
+<button class="neo-btn neo-extruded bg-background text-error font-label-sm uppercase rounded-lg py-2 px-4 flex items-center gap-1 transition-all w-full sm:w-auto justify-center">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+<span>Apply Fine</span>
+</button>
+</div>
+<!-- List Item 2 -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 neo-recessed rounded-lg gap-4 bg-background">
+<div>
+<h3 class="font-headline-sm text-body-md font-bold text-on-surface">Unit C-302</h3>
+<p class="font-label-sm text-secondary">Overdue by 30 days</p>
+</div>
+<button class="neo-btn neo-extruded bg-background text-error font-label-sm uppercase rounded-lg py-2 px-4 flex items-center gap-1 transition-all w-full sm:w-auto justify-center">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+<span>Apply Fine</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-background shadow-[-6px_-6px_12px_#FFFFFF,6px_6px_12px_#BEBEBE] shadow-[-2px_-4px_8px_#BEBEBE] md:hidden">
+<div class="flex justify-around items-center w-full px-2 py-3 bg-background">
+<!-- Inactive: Home -->
+<a class="flex flex-col items-center justify-center text-secondary p-2 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<!-- Active: Finances -->
+<a class="flex flex-col items-center justify-center text-primary font-bold shadow-[inset_-4px_-4px_8px_#FFFFFF,inset_4px_4px_8px_#BEBEBE] rounded-lg p-2 active:scale-95 transition-all bg-background w-16 h-16 -mt-6 neo-extruded" href="#" style="box-shadow: -6px -6px 12px #FFFFFF, 6px 6px 12px #BEBEBE;">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="font-label-sm text-[10px] mt-1">Finances</span>
+</a>
+<!-- Inactive: Notices -->
+<a class="flex flex-col items-center justify-center text-secondary p-2 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-label-sm text-label-sm">Notices</span>
+</a>
+<!-- Inactive: Complaints -->
+<a class="flex flex-col items-center justify-center text-secondary p-2 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-label-sm text-label-sm">Complaints</span>
+</a>
+<!-- Inactive: More -->
+<a class="flex flex-col items-center justify-center text-secondary p-2 hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">menu</span>
+<span class="font-label-sm text-label-sm">More</span>
+</a>
+</div>
+</nav>
+</body></html>

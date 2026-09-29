@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Committee Member Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;family=Jetbrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-error-container": "#93000a",
+                "surface": "#fbf9f9",
+                "surface-container-high": "#e9e8e7",
+                "on-secondary-fixed": "#1c1b1b",
+                "on-secondary-fixed-variant": "#474646",
+                "on-primary-fixed-variant": "#474747",
+                "secondary-fixed": "#e5e2e1",
+                "secondary": "#5f5e5e",
+                "on-tertiary-fixed": "#1e1b1b",
+                "secondary-container": "#e5e2e1",
+                "tertiary-fixed": "#e8e1e0",
+                "surface-dim": "#dbdad9",
+                "primary-fixed": "#e4e2e1",
+                "error-container": "#ffdad6",
+                "surface-container": "#efeded",
+                "on-error": "#ffffff",
+                "on-secondary": "#ffffff",
+                "error": "#ba1a1a",
+                "on-surface": "#1b1c1c",
+                "primary-container": "#424242",
+                "primary-fixed-dim": "#c8c6c6",
+                "surface-bright": "#fbf9f9",
+                "inverse-primary": "#c8c6c6",
+                "surface-tint": "#5f5e5e",
+                "surface-container-lowest": "#ffffff",
+                "tertiary-fixed-dim": "#ccc5c5",
+                "surface-variant": "#e3e2e2",
+                "on-primary": "#ffffff",
+                "tertiary": "#2f2b2b",
+                "on-primary-fixed": "#1b1c1c",
+                "secondary-fixed-dim": "#c8c6c5",
+                "outline": "#747878",
+                "surface-container-low": "#f5f3f3",
+                "on-primary-container": "#b0aeae",
+                "on-tertiary": "#ffffff",
+                "tertiary-container": "#454141",
+                "inverse-on-surface": "#f2f0f0",
+                "on-tertiary-fixed-variant": "#4a4646",
+                "on-secondary-container": "#656464",
+                "outline-variant": "#c4c7c7",
+                "on-background": "#1b1c1c",
+                "on-tertiary-container": "#b3adad",
+                "on-surface-variant": "#444748",
+                "background": "#fbf9f9",
+                "primary": "#2c2c2c",
+                "surface-container-highest": "#e3e2e2",
+                "inverse-surface": "#303031"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "base": "8px",
+                "margin-mobile": "16px",
+                "gutter": "24px",
+                "xl": "80px",
+                "sm": "12px",
+                "margin-desktop": "64px",
+                "md": "24px",
+                "xs": "4px",
+                "lg": "48px"
+        },
+        "fontFamily": {
+                "body-md": [
+                        "Manrope"
+                ],
+                "label-sm": [
+                        "Manrope"
+                ],
+                "headline-md": [
+                        "Manrope"
+                ],
+                "label-md": [
+                        "Manrope"
+                ],
+                "headline-lg": [
+                        "Manrope"
+                ],
+                "headline-lg-mobile": [
+                        "Manrope"
+                ],
+                "headline-sm": [
+                        "Manrope"
+                ],
+                "body-lg": [
+                        "Manrope"
+                ]
+        },
+        "fontSize": {
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-md": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "700"
+                        }
+                ],
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "headline-sm": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-background text-primary no-border shadow-[-6px_-6px_12px_#FFFFFF,6px_6px_12px_#BEBEBE] z-40">
+<div class="flex justify-between items-center px-margin-mobile py-sm w-full">
+<div class="w-10 h-10 rounded-full overflow-hidden shadow-[inset_-4px_-4px_8px_#FFFFFF,inset_4px_4px_8px_#BEBEBE] flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="A minimal, professional black and white portrait of a person representing an admin user in a neutral setting, matching a clean neomorphic UI style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-NuT0lobZJ-0GCl8HkbsVy8-8Pdy-sE3Ut4CT2w_i6iDl4FUtts1mJ8gwbRm5gh9L9eB24QUFvPbC97ofP8sQJHtJ4QvIQaFQecci5FMBexgGaD0jzrsFKyePtzAJuDLTRYLhk2AZnQ7TWpLG_I90ffRqSRBbFkHnDslX67DNVFJySj7uHwuap6Vy-EEYMpGUnbgUia-WrvPZx05nCphsaLJyFK6Ph7G0uuvZ6ZKuyTKlUyyc4-DQsDfhwuAY6g0FVzYluwyTFmEE"/>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-extrabold text-primary">SOCIETY PRO</h1>
+<button class="w-10 h-10 rounded-full shadow-[-4px_-4px_8px_#FFFFFF,4px_4px_8px_#BEBEBE] active:shadow-[inset_-4px_-4px_8px_#FFFFFF,inset_4px_4px_8px_#BEBEBE] transition-all flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow px-margin-mobile py-gutter pb-xl flex flex-col gap-gutter">
+<!-- Revenue Overview Card -->
+<section class="bg-surface rounded-xl shadow-[-6px_-6px_12px_#FFFFFF,6px_6px_12px_#BEBEBE] p-md flex flex-col gap-sm">
+<div class="flex items-center gap-2 text-secondary mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Revenue Overview</h2>
+</div>
+<div class="flex flex-col gap-base">
+<div class="flex justify-between items-baseline">
+<span class="font-body-md text-secondary">Total Collected</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary">$45,200</span>
+</div>
+<div class="h-[1px] w-full bg-outline-variant opacity-50 shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)]"></div>
+<div class="flex justify-between items-baseline">
+<span class="font-body-md text-secondary">Pending Dues</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">$3,400</span>
+</div>
+</div>
+<div class="mt-2 h-4 w-full rounded-full shadow-[inset_-4px_-4px_8px_#FFFFFF,inset_4px_4px_8px_#BEBEBE] overflow-hidden">
+<div class="h-full bg-primary shadow-[-2px_0_4px_rgba(0,0,0,0.2)]" style="width: 85%;"></div>
+</div>
+</section>
+<!-- Complaints & Notices Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Recent Complaints -->
+<section class="bg-surface rounded-xl shadow-[-6px_-6px_12px_#FFFFFF,6px_6px_12px_#BEBEBE] p-md flex flex-col gap-sm">
+<div class="flex items-center gap-2 text-secondary mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">report_problem</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Complaints</h2>
+</div>
+<div class="flex flex-col gap-2">
+<div class="p-2 rounded-lg shadow-[inset_-2px_-2px_5px_#FFFFFF,inset_2px_2px_5px_#BEBEBE] flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Pool Maintenance</span>
+<span class="w-2 h-2 rounded-full bg-primary shadow-[-1px_-1px_2px_#FFFFFF,1px_1px_2px_#BEBEBE]"></span>
+</div>
+<div class="p-2 rounded-lg shadow-[inset_-2px_-2px_5px_#FFFFFF,inset_2px_2px_5px_#BEBEBE] flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Hall Booking Issue</span>
+<span class="w-2 h-2 rounded-full bg-outline shadow-[-1px_-1px_2px_#FFFFFF,1px_1px_2px_#BEBEBE]"></span>
+</div>
+</div>
+</section>
+<!-- Active Notices -->
+<section class="bg-surface rounded-xl shadow-[-6px_-6px_12px_#FFFFFF,6px_6px_12px_#BEBEBE] p-md flex flex-col gap-sm">
+<div class="flex items-center gap-2 text-secondary mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">campaign</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Broadcasting</h2>
+</div>
+<div class="p-sm rounded-lg shadow-[inset_-4px_-4px_8px_#FFFFFF,inset_4px_4px_8px_#BEBEBE] bg-background">
+<p class="font-body-md text-body-md text-on-surface-variant mb-1">AGM Scheduled for 24th Oct</p>
+<span class="font-label-sm text-label-sm text-secondary">Active • Sent to all</span>
+</div>
+</section>
+</div>
+<!-- Onboarding Status -->
+<section class="bg-surface rounded-xl shadow-[-6px_-6px_12px_#FFFFFF,6px_6px_12px_#BEBEBE] p-md flex flex-col gap-sm">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group_add</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Onboarding</h2>
+</div>
+<span class="font-label-sm text-label-sm text-primary bg-secondary-container px-2 py-1 rounded shadow-[inset_-2px_-2px_4px_#FFFFFF,inset_2px_2px_4px_#BEBEBE]">3 Pending</span>
+</div>
+<button class="w-full py-sm rounded-lg shadow-[-4px_-4px_8px_#FFFFFF,4px_4px_8px_#BEBEBE] active:shadow-[inset_-4px_-4px_8px_#FFFFFF,inset_4px_4px_8px_#BEBEBE] transition-all font-label-md text-label-md uppercase text-primary tracking-wider">
+                Review Applications
+            </button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl shadow-[-6px_-6px_12px_#FFFFFF,6px_6px_12px_#BEBEBE] bg-background flex justify-around items-center px-2 py-3">
+<a class="flex flex-col items-center justify-center text-primary font-bold shadow-[inset_-4px_-4px_8px_#FFFFFF,inset_4px_4px_8px_#BEBEBE] rounded-lg p-2 w-16" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary p-2 w-16 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-sm text-label-sm mt-1">Finances</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary p-2 w-16 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-label-sm text-label-sm mt-1">Notices</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary p-2 w-16 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-label-sm text-label-sm mt-1">Complaints</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary p-2 w-16 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">menu</span>
+<span class="font-label-sm text-label-sm mt-1">More</span>
+</a>
+</nav>
+</body></html>
